@@ -1972,8 +1972,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSmoothTime: 0.1
   GravityStrength: 0.81
-  WalkSpeed: 4
-  RunSpeed: 8
+  WalkSpeed: 5
+  RunSpeed: 10
 --- !u!4 &1636676127 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000012173301342, guid: 542ed1ba782999242830f6bb88f6d5f6, type: 3}
