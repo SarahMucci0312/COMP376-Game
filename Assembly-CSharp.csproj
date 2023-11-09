@@ -86,6 +86,7 @@
      <Compile Include="Assets\Sophia\resumeScript.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Sophia\startButton.cs" />
      <Compile Include="Assets\Fab\Scripts\StateNameConptroller.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
      <Compile Include="Assets\Models\FPSHangar\_Source\VolumetricLight\VolumetricLight.cs" />
