@@ -14,9 +14,9 @@ public class resumeScript : MonoBehaviour
     }
     public void onClick()
     {
+        Cursor.visible = false;
         pauseMenu.SetActive(false);
         CanvasScript.paused=false;
         Time.timeScale = 1f;
-        Cursor.visible = false;
     }
 }

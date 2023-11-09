@@ -22,10 +22,10 @@ public class canvasScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape) && paused)
         {
+            Cursor.visible = false;
             paused = false;
             pauseMenu.SetActive(false);
             Time.timeScale = 1f;
-            Cursor.visible = false;
         }
 
         else if (Input.GetKeyDown(KeyCode.Escape) && !paused)
