@@ -1,0 +1,11 @@
+Model Information:
+* title:	Computer #3
+* source:	https://sketchfab.com/3d-models/computer-3-9553443537cc42cf91e548ac4dd834fb
+* author:	sudreyskr (https://sketchfab.com/sudreyskr)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Computer #3" (https://sketchfab.com/3d-models/computer-3-9553443537cc42cf91e548ac4dd834fb) by sudreyskr (https://sketchfab.com/sudreyskr) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
