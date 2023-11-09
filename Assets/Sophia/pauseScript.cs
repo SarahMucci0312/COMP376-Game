@@ -8,5 +8,6 @@ public class pauseScript : MonoBehaviour
     public void onClick()
     {
         pauseMenu.SetActive(true);
+        Cursor.visible = true;
     }
 }

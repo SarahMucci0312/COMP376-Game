@@ -10,7 +10,7 @@ public class PlayerCam : MonoBehaviour
     void Start()
     {
         // Invisible cursor to the middle of the screen
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
@@ -30,5 +30,17 @@ public class PlayerCam : MonoBehaviour
 
         transform.eulerAngles = new Vector3(0f, xyRotation.y, 0f);
         playerCam.localEulerAngles = new Vector3(xyRotation.x, 0f, 0f); 
+        
+            if(true)
+            {
+                //Debug.Log(paused);
+                xyRotation.x -= MouseInput.y * sensitivity.y;
+                xyRotation.y += MouseInput.x * sensitivity.x;
+
+                xyRotation.x = Mathf.Clamp(xyRotation.x, -90f, 90f);
+
+                transform.eulerAngles = new Vector3(0f, xyRotation.y, 0f);
+                playerCam.localEulerAngles = new Vector3(xyRotation.x, 0f, 0f); 
+            }
     }
 }

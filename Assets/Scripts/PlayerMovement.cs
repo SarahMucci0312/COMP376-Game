@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         float CurrentSpeed = Input.GetKey(KeyCode.LeftShift) ? RunSpeed : WalkSpeed;
 
         CurrentMoveVelocity = Vector3.SmoothDamp(
-            CurrentMoveVelocity, MoveVector * CurrentSpeed, ref MoveDampVelocity, MoveSmoothTime);
+        CurrentMoveVelocity, MoveVector * CurrentSpeed, ref MoveDampVelocity, MoveSmoothTime);
 
         Controller.Move(CurrentMoveVelocity * Time.deltaTime); 
 

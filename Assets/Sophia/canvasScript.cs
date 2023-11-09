@@ -5,7 +5,7 @@ using UnityEngine;
 public class canvasScript : MonoBehaviour
 {
     public Transform playerTransform;
-    public float distanceFromPlayer = 2.0f;
+    public float distanceFromPlayer = 0.5f;
     public GameObject pauseMenu;
     public bool paused = false;
     void Update()
@@ -17,13 +17,20 @@ public class canvasScript : MonoBehaviour
         // Make the canvas face the same direction as the player
         transform.forward = playerTransform.forward;
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && paused)
         {
-            Debug.Log(paused);
+            paused = false;
+            pauseMenu.SetActive(false);
+            Time.timeScale = 1f;
+            Cursor.visible = false;
+        }
+
+        else if (Input.GetKeyDown(KeyCode.Escape) && !paused)
+        {
             pauseMenu.SetActive(true);
             Time.timeScale = 0f;
             paused=true;
-            Debug.Log(paused);
+            Cursor.visible = true;
         }
     }
 }
