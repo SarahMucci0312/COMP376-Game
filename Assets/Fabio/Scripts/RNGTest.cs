@@ -8,4 +8,11 @@ public class RNGTest : MonoBehaviour, IInteractable
     {
         Debug.Log(Random.Range(0,100));
     }
+    public void activateE()
+    {
+    }
+
+    public void deactivateE()
+    {
+    }
 }
