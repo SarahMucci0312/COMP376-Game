@@ -7,11 +7,14 @@ public class PlayerCam : MonoBehaviour
     public Transform playerCam;
     public Vector2 sensitivity;
     private Vector2 xyRotation;
+    public GameObject canvas;
+    public canvasScript CanvasScript;
     void Start()
     {
         // Invisible cursor to the middle of the screen
         //Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        CanvasScript = canvas.GetComponent<canvasScript>();
     }
 
     // Update is called once per frame
@@ -31,7 +34,7 @@ public class PlayerCam : MonoBehaviour
         transform.eulerAngles = new Vector3(0f, xyRotation.y, 0f);
         playerCam.localEulerAngles = new Vector3(xyRotation.x, 0f, 0f); 
         
-            if(true)
+            if(!CanvasScript.paused)
             {
                 //Debug.Log(paused);
                 xyRotation.x -= MouseInput.y * sensitivity.y;
@@ -41,6 +44,11 @@ public class PlayerCam : MonoBehaviour
 
                 transform.eulerAngles = new Vector3(0f, xyRotation.y, 0f);
                 playerCam.localEulerAngles = new Vector3(xyRotation.x, 0f, 0f); 
+                
+            }
+            else
+            {
+                playerCam.localEulerAngles = new Vector3(0f, 0f, 0f); 
             }
     }
 }

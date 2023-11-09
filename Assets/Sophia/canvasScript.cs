@@ -5,13 +5,16 @@ using UnityEngine;
 public class canvasScript : MonoBehaviour
 {
     public Transform playerTransform;
+    //public Transform camLookAt;
     public float distanceFromPlayer = 0.5f;
     public GameObject pauseMenu;
     public bool paused = false;
+    public int playerHeight = 1;
     void Update()
     {
         // Calculate the canvas position in front of the player
         Vector3 canvasPosition = playerTransform.position + playerTransform.forward * distanceFromPlayer;
+        canvasPosition.y += playerHeight;
         transform.position = canvasPosition;
 
         // Make the canvas face the same direction as the player
@@ -31,6 +34,7 @@ public class canvasScript : MonoBehaviour
             Time.timeScale = 0f;
             paused=true;
             Cursor.visible = true;
+            //camLookAt.Rotation = new Vector3(0,0,0);
         }
     }
 }

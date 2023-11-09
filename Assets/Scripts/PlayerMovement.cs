@@ -12,10 +12,14 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 CurrentMoveVelocity;
     private Vector3 MoveDampVelocity;
-    
+    public GameObject canvas;
+    public canvasScript CanvasScript;
+
     void Start()
     {
         Controller = GetComponent<CharacterController>(); 
+        CanvasScript = canvas.GetComponent<canvasScript>();
+
     }
 
     
@@ -32,14 +36,16 @@ public class PlayerMovement : MonoBehaviour
         {
             PlayerInput.Normalize();
         }
+        if(!CanvasScript.paused)
+        {
+            Vector3 MoveVector = transform.TransformDirection(PlayerInput);
+            float CurrentSpeed = Input.GetKey(KeyCode.LeftShift) ? RunSpeed : WalkSpeed;
 
-        Vector3 MoveVector = transform.TransformDirection(PlayerInput);
-        float CurrentSpeed = Input.GetKey(KeyCode.LeftShift) ? RunSpeed : WalkSpeed;
+            CurrentMoveVelocity = Vector3.SmoothDamp(
+            CurrentMoveVelocity, MoveVector * CurrentSpeed, ref MoveDampVelocity, MoveSmoothTime);
 
-        CurrentMoveVelocity = Vector3.SmoothDamp(
-        CurrentMoveVelocity, MoveVector * CurrentSpeed, ref MoveDampVelocity, MoveSmoothTime);
-
-        Controller.Move(CurrentMoveVelocity * Time.deltaTime); 
+            Controller.Move(CurrentMoveVelocity * Time.deltaTime); 
+        }
 
     }
 }
