@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class OpenDoor : MonoBehaviour
 {
+    public MyDoorController doorScript;
  
     void Update()
     {
@@ -11,7 +12,10 @@ public class OpenDoor : MonoBehaviour
 
         if (StateNameConptroller.b1 == true && StateNameConptroller.b2 == true && StateNameConptroller.b3 == true)
         {
-            transform.position = new Vector3(50,0,0);
+            //Debug.Log("door open tru");
+            doorScript.doorOpen=true;
+            doorScript.PlayAnimation();
+            //transform.position = new Vector3(50,0,0);
         }
         
     }

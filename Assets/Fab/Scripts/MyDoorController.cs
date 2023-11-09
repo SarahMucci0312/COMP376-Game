@@ -6,7 +6,7 @@ public class MyDoorController : MonoBehaviour
 {
     public Animator doorAnim;
 
-    private bool doorOpen = false;
+    public bool doorOpen = false;
 
     private void Awake()
     {
@@ -15,16 +15,10 @@ public class MyDoorController : MonoBehaviour
 
     public void PlayAnimation()
     {
-        if (!doorOpen)
+        if (doorOpen)
         {
+            Debug.Log("door opening");
             doorAnim.Play("OpenDoor", 0, 0.0f);
-            doorOpen = true;
-        }
-
-        else
-        {
-            doorAnim.Play("CloseDoor", 0, 0.0f);
-            doorOpen= false;
         }
     }
 }
