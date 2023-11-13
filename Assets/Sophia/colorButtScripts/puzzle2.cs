@@ -23,6 +23,21 @@ public class puzzle2 : MonoBehaviour
     public GameObject orangeBut;
     public Animator orangeAnim;
 
+    public GameObject block1;
+    public block1 b1Script;
+
+    public GameObject block2;
+    public block2 b2Script;
+
+    public GameObject block3;
+    public block3 b3Script;
+    
+    public GameObject block4;
+    public block4 b4Script;
+
+    public GameObject block5;
+    public block5 b5Script;
+
     public void Start()
     {
         redAnim = redBut.GetComponent<Animator>();
@@ -34,10 +49,225 @@ public class puzzle2 : MonoBehaviour
         blackAnim = blackBut.GetComponent<Animator>();
         whiteAnim = whiteBut.GetComponent<Animator>();
         orangeAnim = orangeBut.GetComponent<Animator>();
+
+        b1Script = block1.GetComponent<block1>();
+        b2Script = block2.GetComponent<block2>();
+        b3Script = block3.GetComponent<block3>();
+        b4Script = block4.GetComponent<block4>();
+        b5Script = block5.GetComponent<block5>();
+
     }
 
     public void Update()
 {
+    if(StateNameConptroller.Pressed1==true)
+    {
+        if(StateNameConptroller.button1=="red")
+        {
+            b1Script.color = StateNameConptroller.button1;
+        }
+        if(StateNameConptroller.button1=="blue")
+        {
+            b1Script.color = StateNameConptroller.button1;
+        }
+        if(StateNameConptroller.button1=="green")
+        {
+            b1Script.color = StateNameConptroller.button1;
+        }
+        if(StateNameConptroller.button1=="yellow")
+        {
+            b1Script.color = StateNameConptroller.button1;
+        }
+        if(StateNameConptroller.button1=="pink")
+        {
+            b1Script.color = StateNameConptroller.button1;
+        }
+        if(StateNameConptroller.button1=="orange")
+        {
+            b1Script.color = StateNameConptroller.button1;
+        }
+        if(StateNameConptroller.button1=="brown")
+        {
+            b1Script.color = StateNameConptroller.button1;
+        }
+        if(StateNameConptroller.button1=="black")
+        {
+            b1Script.color = StateNameConptroller.button1;
+        }
+        if(StateNameConptroller.button1=="white")
+        {
+            b1Script.color = "white";
+        }
+    }
+    else
+    {
+        b1Script.color = "default";
+        b2Script.color = "default";
+        b3Script.color = "default";
+        b4Script.color = "default";
+        b5Script.color = "default";
+    }
+
+    if(StateNameConptroller.Pressed2==true)
+    {
+        if(StateNameConptroller.button2=="red")
+        {
+            b2Script.color = StateNameConptroller.button2;
+        }
+        if(StateNameConptroller.button2=="blue")
+        {
+            b2Script.color = StateNameConptroller.button2;
+        }
+        if(StateNameConptroller.button2=="green")
+        {
+            b2Script.color = StateNameConptroller.button2;
+        }
+        if(StateNameConptroller.button2=="yellow")
+        {
+            b2Script.color = StateNameConptroller.button2;
+        }
+        if(StateNameConptroller.button2=="pink")
+        {
+            b2Script.color = StateNameConptroller.button2;
+        }
+        if(StateNameConptroller.button2=="orange")
+        {
+            b2Script.color = StateNameConptroller.button2;
+        }
+        if(StateNameConptroller.button2=="brown")
+        {
+            b2Script.color = StateNameConptroller.button2;
+        }
+        if(StateNameConptroller.button2=="black")
+        {
+            b2Script.color = StateNameConptroller.button2;
+        }
+        if(StateNameConptroller.button2=="white")
+        {
+            b2Script.color = "white";
+        }
+    }
+
+    if(StateNameConptroller.Pressed3==true)
+    {
+        if(StateNameConptroller.button3=="red")
+        {
+            b3Script.color = StateNameConptroller.button3;
+        }
+        if(StateNameConptroller.button3=="blue")
+        {
+            b3Script.color = StateNameConptroller.button3;
+        }
+        if(StateNameConptroller.button3=="green")
+        {
+            b3Script.color = StateNameConptroller.button3;
+        }
+        if(StateNameConptroller.button3=="yellow")
+        {
+            b3Script.color = StateNameConptroller.button3;
+        }
+        if(StateNameConptroller.button3=="pink")
+        {
+            b3Script.color = StateNameConptroller.button3;
+        }
+        if(StateNameConptroller.button3=="orange")
+        {
+            b3Script.color = StateNameConptroller.button3;
+        }
+        if(StateNameConptroller.button3=="brown")
+        {
+            b3Script.color = StateNameConptroller.button3;
+        }
+        if(StateNameConptroller.button3=="black")
+        {
+            b3Script.color = StateNameConptroller.button3;
+        }
+        if(StateNameConptroller.button3=="white")
+        {
+            b3Script.color = "white";
+        }
+    }
+
+    if(StateNameConptroller.Pressed4==true)
+    {
+        if(StateNameConptroller.button4=="red")
+        {
+            b4Script.color = StateNameConptroller.button4;
+        }
+        if(StateNameConptroller.button4=="blue")
+        {
+            b4Script.color = StateNameConptroller.button4;
+        }
+        if(StateNameConptroller.button4=="green")
+        {
+            b4Script.color = StateNameConptroller.button4;
+        }
+        if(StateNameConptroller.button4=="yellow")
+        {
+            b4Script.color = StateNameConptroller.button4;
+        }
+        if(StateNameConptroller.button4=="pink")
+        {
+            b4Script.color = StateNameConptroller.button4;
+        }
+        if(StateNameConptroller.button4=="orange")
+        {
+            b4Script.color = StateNameConptroller.button4;
+        }
+        if(StateNameConptroller.button4=="brown")
+        {
+            b4Script.color = StateNameConptroller.button4;
+        }
+        if(StateNameConptroller.button4=="black")
+        {
+            b4Script.color = StateNameConptroller.button4;
+        }
+        if(StateNameConptroller.button4=="white")
+        {
+            b4Script.color = "white";
+        }
+    }
+
+    if(StateNameConptroller.Pressed5==true)
+    {
+        if(StateNameConptroller.button5=="red")
+        {
+            b5Script.color = StateNameConptroller.button5;
+        }
+        if(StateNameConptroller.button5=="blue")
+        {
+            b5Script.color = StateNameConptroller.button5;
+        }
+        if(StateNameConptroller.button5=="green")
+        {
+            b5Script.color = StateNameConptroller.button5;
+        }
+        if(StateNameConptroller.button5=="yellow")
+        {
+            b5Script.color = StateNameConptroller.button5;
+        }
+        if(StateNameConptroller.button5=="pink")
+        {
+            b5Script.color = StateNameConptroller.button5;
+        }
+        if(StateNameConptroller.button5=="orange")
+        {
+            b5Script.color = StateNameConptroller.button5;
+        }
+        if(StateNameConptroller.button5=="brown")
+        {
+            b5Script.color = StateNameConptroller.button5;
+        }
+        if(StateNameConptroller.button5=="black")
+        {
+            b5Script.color = StateNameConptroller.button5;
+        }
+        if(StateNameConptroller.button5=="white")
+        {
+            b5Script.color = "white";
+        }
+    }
+
     if(StateNameConptroller.Pressed1==true && StateNameConptroller.Pressed2==true&& StateNameConptroller.Pressed3==true && StateNameConptroller.Pressed4==true && StateNameConptroller.Pressed5==true )
     {
         Debug.LogWarning("5 buttons pressed");
@@ -53,10 +283,12 @@ public class puzzle2 : MonoBehaviour
             StateNameConptroller.Pressed2 = false;
             StateNameConptroller.Pressed3 = false;
             StateNameConptroller.Pressed4 = false;
+            StateNameConptroller.Pressed5 = false;
             StateNameConptroller.button1 = "";
             StateNameConptroller.button2 = "";
             StateNameConptroller.button3 = "";
             StateNameConptroller.button4 = "";
+            StateNameConptroller.button5 = "";
             redAnim.Play("redOff", 0, 0.0f);
             blueAnim.Play("blueOff", 0, 0.0f);
             greenAnim.Play("greenOff", 0, 0.0f);
