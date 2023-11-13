@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class blueButton : MonoBehaviour, IInteractable
+public class blackButton : MonoBehaviour, IInteractable
 {
     private Animator colorButtonAnimator;
     
@@ -15,36 +15,36 @@ public class blueButton : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if(!StateNameConptroller.bluePressed)
+        if(!StateNameConptroller.blackPressed)
         {
-            StateNameConptroller.bluePressed=true;
-            colorButtonAnimator.Play("bluePressed", 0, 0.0f);
-            Debug.Log("pressed blue");
+            StateNameConptroller.blackPressed=true;
+            colorButtonAnimator.Play("blackPressed", 0, 0.0f);
+            Debug.Log("pressed black");
             if(StateNameConptroller.Pressed1==false)
             {
                 StateNameConptroller.Pressed1= true;
-                StateNameConptroller.button1= "blue";
+                StateNameConptroller.button1= "black";
             }
             else
             {
                 if(StateNameConptroller.Pressed2==false)
                 {
                     StateNameConptroller.Pressed2= true;
-                    StateNameConptroller.button2= "blue";
+                    StateNameConptroller.button2= "black";
                 }
                 else
                 {
                     if(StateNameConptroller.Pressed3==false)
                     {
                         StateNameConptroller.Pressed3= true;
-                        StateNameConptroller.button3= "blue";
+                        StateNameConptroller.button3= "black";
                     }
                     else
                     {
                         if(StateNameConptroller.Pressed4==false)
                         {
                             StateNameConptroller.Pressed4= true;
-                            StateNameConptroller.button4= "blue";
+                            StateNameConptroller.button4= "black";
                         }
                     }
                 }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class redButton : MonoBehaviour, IInteractable
 {
     private Animator colorButtonAnimator;
+    
+    public GameObject E;
 
     public void Start()
     {
@@ -13,30 +15,50 @@ public class redButton : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if (StateNameConptroller.redPressed == false && StateNameConptroller.bluePressed == false && StateNameConptroller.yellowPressed == false && StateNameConptroller.greenPressed == false)
+        if(!StateNameConptroller.redPressed)
         {
+            StateNameConptroller.redPressed=true;
+            colorButtonAnimator.Play("redPressed", 0, 0.0f);
             Debug.Log("pressed red");
-            colorButtonAnimator.Play("red", 0, 0.0f);
-            StateNameConptroller.redPressed = true;
-            Debug.Log("Correct button");
-        }
-
-        else
-        {
-            Debug.Log("pressed red");
-            colorButtonAnimator.Play("red", 0, 0.0f);
-            StateNameConptroller.redPressed = false;
-            StateNameConptroller.bluePressed = false;
-            StateNameConptroller.yellowPressed = false;
-            StateNameConptroller.greenPressed = false;
-            Debug.Log("Wrong button, reseting");
+            if(StateNameConptroller.Pressed1==false)
+            {
+                StateNameConptroller.Pressed1= true;
+                StateNameConptroller.button1= "red";
+            }
+            else
+            {
+                if(StateNameConptroller.Pressed2==false)
+                {
+                    StateNameConptroller.Pressed2= true;
+                    StateNameConptroller.button2= "red";
+                }
+                else
+                {
+                    if(StateNameConptroller.Pressed3==false)
+                    {
+                        StateNameConptroller.Pressed3= true;
+                        StateNameConptroller.button3= "red";
+                    }
+                    else
+                    {
+                        if(StateNameConptroller.Pressed4==false)
+                        {
+                            StateNameConptroller.Pressed4= true;
+                            StateNameConptroller.button4= "red";
+                        }
+                    }
+                }
+            }
         }
     }
+
     public void activateE()
     {
+        E.SetActive(true);
     }
 
     public void deactivateE()
     {
+        E.SetActive(false);
     }
 }

@@ -29,7 +29,6 @@ public class Interactor : MonoBehaviour
         
         if (hit.collider.gameObject.TryGetComponent(out IInteractable interactObj))
         {
-            Debug.Log("sees");
             if (interactObj != currentInteractor)
             {
                 if (currentInteractor != null)

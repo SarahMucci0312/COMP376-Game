@@ -13,5 +13,18 @@ public class StateNameConptroller : MonoBehaviour
     public static bool bluePressed = false;
     public static bool yellowPressed = false;
     public static bool greenPressed = false;
+    public static bool pinkPressed = false;
+    public static bool orangePressed = false;
+    public static bool brownPressed = false;
+    public static bool whitePressed = false;
+    public static bool blackPressed = false;
+    public static bool Pressed1 = false;
+    public static bool Pressed2 = false;
+    public static bool Pressed3 = false;
+    public static bool Pressed4 = false;
+    public static string button1 = "";
+    public static string button2 = "";
+    public static string button3 = "";
+    public static string button4 = "";
 
 }
