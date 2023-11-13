@@ -38,6 +38,9 @@ public class puzzle2 : MonoBehaviour
     public GameObject block5;
     public block5 b5Script;
 
+    public GameObject denied;
+    public GameObject granted;
+
     public void Start()
     {
         redAnim = redBut.GetComponent<Animator>();
@@ -275,6 +278,8 @@ public class puzzle2 : MonoBehaviour
         {
             Debug.LogWarning("correct sequqence");
             StateNameConptroller.p2Solved = true;
+            denied.SetActive(false);
+            granted.SetActive(true);
         }
         else
         {
