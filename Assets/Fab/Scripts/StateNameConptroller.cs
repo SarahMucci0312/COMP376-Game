@@ -9,4 +9,9 @@ public class StateNameConptroller : MonoBehaviour
     public static bool b1 = false;
     public static bool b2 = false;
     public static bool b3 = false;
+    public static bool redPressed = false;
+    public static bool bluePressed = false;
+    public static bool yellowPressed = false;
+    public static bool greenPressed = false;
+
 }
