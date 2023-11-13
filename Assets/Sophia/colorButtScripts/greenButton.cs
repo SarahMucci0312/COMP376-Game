@@ -47,6 +47,15 @@ public class greenButton : MonoBehaviour, IInteractable
                             StateNameConptroller.Pressed4= true;
                             StateNameConptroller.button4= "green";
                         }
+                        else
+                        {
+                            if(StateNameConptroller.Pressed5==false)
+                        {
+                            StateNameConptroller.Pressed5= true;
+                            StateNameConptroller.button5= "green";
+                        }
+                        else{}
+                        }
                     }
                 }
             }

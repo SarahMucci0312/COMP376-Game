@@ -46,6 +46,15 @@ public class purpleButton : MonoBehaviour, IInteractable
                             StateNameConptroller.Pressed4= true;
                             StateNameConptroller.button4= "orange";
                         }
+                        else
+                        {
+                            if(StateNameConptroller.Pressed5==false)
+                        {
+                            StateNameConptroller.Pressed5= true;
+                            StateNameConptroller.button5= "orange";
+                        }
+                        else{}
+                        }
                     }
                 }
             }

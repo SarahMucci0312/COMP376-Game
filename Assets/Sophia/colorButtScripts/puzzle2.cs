@@ -38,15 +38,17 @@ public class puzzle2 : MonoBehaviour
 
     public void Update()
 {
-    if(StateNameConptroller.Pressed1==true && StateNameConptroller.Pressed2==true&& StateNameConptroller.Pressed3==true )//&& StateNameConptroller.Pressed4==true)
+    if(StateNameConptroller.Pressed1==true && StateNameConptroller.Pressed2==true&& StateNameConptroller.Pressed3==true && StateNameConptroller.Pressed4==true && StateNameConptroller.Pressed5==true )
     {
-        Debug.LogWarning("yay");
-        if(StateNameConptroller.button1=="red"&&StateNameConptroller.button2=="blue"&& StateNameConptroller.button3=="yellow") //&& StateNameConptroller.button4=="green")
+        Debug.LogWarning("5 buttons pressed");
+        if(StateNameConptroller.button1=="red"&&StateNameConptroller.button2=="blue"&& StateNameConptroller.button3=="yellow"&& StateNameConptroller.button4=="green" && StateNameConptroller.button5=="pink")
         {
-            Debug.LogWarning("yay");
+            Debug.LogWarning("correct sequqence");
+            StateNameConptroller.p2Solved = true;
         }
         else
         {
+            Debug.LogWarning("wrong sequqence");
             StateNameConptroller.Pressed1 = false;
             StateNameConptroller.Pressed2 = false;
             StateNameConptroller.Pressed3 = false;
@@ -68,6 +70,11 @@ public class puzzle2 : MonoBehaviour
             StateNameConptroller.bluePressed = false;
             StateNameConptroller.yellowPressed = false;
             StateNameConptroller.greenPressed = false;
+            StateNameConptroller.pinkPressed = false;
+            StateNameConptroller.brownPressed = false;
+            StateNameConptroller.blackPressed = false;
+            StateNameConptroller.whitePressed = false;
+            StateNameConptroller.orangePressed = false;
         }
     }
 }

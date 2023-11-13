@@ -46,6 +46,15 @@ public class brownButton : MonoBehaviour, IInteractable
                             StateNameConptroller.Pressed4= true;
                             StateNameConptroller.button4= "brown";
                         }
+                        else
+                        {
+                            if(StateNameConptroller.Pressed5==false)
+                        {
+                            StateNameConptroller.Pressed5= true;
+                            StateNameConptroller.button5= "brown";
+                        }
+                        else{}
+                        }
                     }
                 }
             }
