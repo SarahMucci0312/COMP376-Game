@@ -5923,6 +5923,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7997892520078541779, guid: ae8b5b5aa5aa45740b7588604fd7ce32, type: 3}
   m_PrefabInstance: {fileID: 1964510875}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &678588176 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 6a8de9c6b1be28544a92fddfa2e71186, type: 3}
+  m_PrefabInstance: {fileID: 699562042}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &678588181
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678588176}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.014, y: 4.293876, z: 1.338}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &692586966
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6178,7 +6204,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 6a8de9c6b1be28544a92fddfa2e71186, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 678588181}
   m_SourcePrefab: {fileID: 100100000, guid: 6a8de9c6b1be28544a92fddfa2e71186, type: 3}
 --- !u!1 &702936652 stripped
 GameObject:
@@ -11019,6 +11048,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 198c1753a601ab546a1ce34b3b36cc6b, type: 3}
+--- !u!1 &1289799810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1289799811}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1289799811
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289799810}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.009, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1582403582}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1291329330 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 4925aa06dfe2b7f48a7213b94406afb4, type: 3}
@@ -13717,6 +13777,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 963194228}
+  - {fileID: 1289799811}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &1582403583
@@ -13773,10 +13834,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c83b3907a00bea4db76bff7c520aafc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSmoothTime: 0.1
-  GravityStrength: 0.81
-  WalkSpeed: 5
-  RunSpeed: 10
+  moveSpeed: 5
+  gravity: -9.81
+  groundCheck: {fileID: 1289799811}
+  groundDistance: 0.4
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
   canvas: {fileID: 801356372}
   CanvasScript: {fileID: 801356373}
 --- !u!54 &1582403586
@@ -17638,6 +17702,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: f579a3398e84698419fd381446063dc2, type: 3}
       propertyPath: m_Name
       value: Ground (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f579a3398e84698419fd381446063dc2, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f579a3398e84698419fd381446063dc2, type: 3}
       propertyPath: m_LocalPosition.x
