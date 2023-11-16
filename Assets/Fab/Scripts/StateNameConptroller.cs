@@ -31,4 +31,6 @@ public class StateNameConptroller : MonoBehaviour
     public static string button4 = "";
     public static string button5 = "";
 
+    public static bool simonSaysPressed = false; 
+
 }

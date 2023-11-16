@@ -28,7 +28,7 @@ public class SimonSays : MonoBehaviour
     Color red = Color.red; 
     Color transparent = new Color(0, 0, 0, 0); 
 
-    void Start()
+    void OnEnable()
     {
         level = 0;
         buttonClicks = 0;
