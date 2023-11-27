@@ -276,7 +276,7 @@ public class puzzle2 : MonoBehaviour
         Debug.LogWarning("5 buttons pressed");
         if(StateNameConptroller.button1=="red"&&StateNameConptroller.button2=="blue"&& StateNameConptroller.button3=="green"&& StateNameConptroller.button4=="yellow" && StateNameConptroller.button5=="pink")
         {
-            Debug.LogWarning("correct sequqence");
+            Debug.LogWarning("correct sequence");
             StateNameConptroller.p2Solved = true;
             denied.SetActive(false);
             granted.SetActive(true);

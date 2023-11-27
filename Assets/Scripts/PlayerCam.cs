@@ -9,6 +9,7 @@ public class PlayerCam : MonoBehaviour
     private Vector2 xyRotation;
     public GameObject canvas;
     public canvasScript CanvasScript;
+    [SerializeField] GameObject crosshair;
     void Start()
     {
         // Invisible cursor to the middle of the screen
@@ -44,11 +45,28 @@ public class PlayerCam : MonoBehaviour
 
                 transform.eulerAngles = new Vector3(0f, xyRotation.y, 0f);
                 playerCam.localEulerAngles = new Vector3(xyRotation.x, 0f, 0f); 
+
+                StateNameConptroller.isPaused = false;
                 
             }
             else
             {
                 playerCam.localEulerAngles = new Vector3(0f, 0f, 0f); 
+                StateNameConptroller.isPaused = true;
+
             }
+
+
+        
+        if (StateNameConptroller.isPaused)
+        {
+            crosshair.SetActive(false);
+        }
+        else
+        {
+            crosshair.SetActive(true);
+        }
+
+
     }
 }

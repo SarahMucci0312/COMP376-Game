@@ -17,7 +17,6 @@ public class MyDoorController : MonoBehaviour
     {
         if (doorOpen)
         {
-            Debug.Log("door opening");
             doorAnim.Play("OpenDoor", 0, 0.0f);
         }
     }
