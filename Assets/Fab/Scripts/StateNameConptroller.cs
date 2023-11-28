@@ -9,7 +9,9 @@ public class StateNameConptroller : MonoBehaviour
     public static bool b1 = false;
     public static bool b2 = false;
     public static bool b3 = false;
+    public static bool doOnce = false;
 
+    //Sophia buzzle
     public static bool p2Solved = false;
     public static bool redPressed = false;
     public static bool bluePressed = false;
@@ -30,5 +32,16 @@ public class StateNameConptroller : MonoBehaviour
     public static string button3 = "";
     public static string button4 = "";
     public static string button5 = "";
+
+    //Hanae puzzle
+    public static bool simonSaysPressed = false;
+
+    //Crosshair
+    public static bool isPaused = false;
+
+    //Keypad puzzle
+    public static string pass = "2614";
+    public static string currentPass = "";
+    public static bool keypadPuzzleSolved = false;
 
 }

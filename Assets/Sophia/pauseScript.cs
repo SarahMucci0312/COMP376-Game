@@ -9,5 +9,7 @@ public class pauseScript : MonoBehaviour
     {
         pauseMenu.SetActive(true);
         Cursor.visible = true;
+        StateNameConptroller.isPaused = true;
+
     }
 }

@@ -8,6 +8,7 @@ public class canvasScript : MonoBehaviour
     //public Transform camLookAt;
     public float distanceFromPlayer = 0.5f;
     public GameObject pauseMenu;
+    public GameObject SimonSaysPanel;
     public bool paused = false;
     public int playerHeight = 1;
     void Update()
@@ -35,6 +36,18 @@ public class canvasScript : MonoBehaviour
             paused=true;
             Cursor.visible = true;
             //camLookAt.Rotation = new Vector3(0,0,0);
+        }
+
+        if (SimonSaysPanel.activeSelf == true)
+        {
+            Cursor.visible = true;
+            paused = true; 
+        }
+
+        if (SimonSaysPanel.activeSelf == false)
+        {
+            Cursor.visible = false;
+            paused = false;
         }
     }
 }

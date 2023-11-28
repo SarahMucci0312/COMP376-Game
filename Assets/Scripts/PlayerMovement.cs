@@ -5,13 +5,20 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private CharacterController Controller;
-    public float MoveSmoothTime;
-    public float GravityStrength;
-    public float WalkSpeed;
-    public float RunSpeed;
+    public float moveSpeed;
+    public float gravity = -9.81f;
 
-    private Vector3 CurrentMoveVelocity;
-    private Vector3 MoveDampVelocity;
+    float horizontal;
+    float vertical;
+
+    Vector3 moveDirection;
+    Vector3 velocity;
+
+    public Transform groundCheck;
+    public float groundDistance = 0.4f;
+    public LayerMask groundMask;
+
+    bool isGrounded;
     public GameObject canvas;
     public canvasScript CanvasScript;
 
@@ -25,26 +32,24 @@ public class PlayerMovement : MonoBehaviour
     
     void Update()
     {
-        Vector3 PlayerInput = new Vector3
-        {
-            x = Input.GetAxisRaw("Horizontal"),
-            y = 0f,
-            z = Input.GetAxisRaw("Vertical")
-        };
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-        if (PlayerInput.magnitude > 1f)
+        if (isGrounded && velocity.y < 0)
         {
-            PlayerInput.Normalize();
+            velocity.y = -2f;
         }
-        if(!CanvasScript.paused)
+        if (!CanvasScript.paused)
         {
-            Vector3 MoveVector = transform.TransformDirection(PlayerInput);
-            float CurrentSpeed = Input.GetKey(KeyCode.LeftShift) ? RunSpeed : WalkSpeed;
 
-            CurrentMoveVelocity = Vector3.SmoothDamp(
-            CurrentMoveVelocity, MoveVector * CurrentSpeed, ref MoveDampVelocity, MoveSmoothTime);
+            horizontal = Input.GetAxisRaw("Horizontal");
+            vertical = Input.GetAxisRaw("Vertical");
 
-            Controller.Move(CurrentMoveVelocity * Time.deltaTime); 
+            moveDirection = transform.right * horizontal + transform.forward * vertical;
+            Controller.Move(moveDirection * moveSpeed * Time.deltaTime);
+
+            velocity.y += gravity * Time.deltaTime;
+
+            Controller.Move(velocity * Time.deltaTime);
         }
 
     }
