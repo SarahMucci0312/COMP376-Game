@@ -60,7 +60,7 @@ public class SimonSays : MonoBehaviour
         {
             if (level >= colorOrderRunCount)
             {
-                Debug.Log("Flash: " + i); 
+                
                 yield return new WaitForSeconds(0.75f);
                 Buttons[ColorOrder[i]].GetComponent<Image>().color = ButtonColorsFlash[ColorOrder[i]];
                 yield return new WaitForSeconds(1f);
@@ -117,7 +117,7 @@ public class SimonSays : MonoBehaviour
         // Blink 3 times
         for (int j = 0; j < 3; j++)
         {
-            Debug.Log("Blink: " + j);
+            
             for (int i = 0; i < Buttons.Length; i++)
                 Buttons[i].GetComponent<Image>().color = color;
             for (int i = 0; i < LevelLights.Length; i++)
