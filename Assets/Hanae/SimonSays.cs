@@ -81,22 +81,14 @@ public class SimonSays : MonoBehaviour
         {
             Debug.Log("Incorrect button"); 
             correct = false;
-            StartCoroutine(ColorBlink(red));
-            ChanceLights[strikes].GetComponent<Image>().color = red;
+            StartCoroutine(ColorBlink(red)); // Display sequence call happens in here
             
+            ChanceLights[strikes].GetComponent<Image>().color = transparent;
+
             // Reset values
             colorOrderRunCount = -1;
             strikes++;
             level = 1;
-
-            if (strikes == 3)
-            {
-                Panel.SetActive(false);
-            } else
-            {
-                StartCoroutine(DisplaySequence());
-            }
-
         }
 
         // If succeeded current sequence, continue to next sequence
@@ -118,7 +110,7 @@ public class SimonSays : MonoBehaviour
         }
     }
 
-    // All buttons blink if getting sequence wrong or complete puzzle
+    // All buttons blink if getting sequence wrong or if successfully completing puzzle
     IEnumerator ColorBlink(Color color)
     {
         yield return new WaitForSeconds(.25f); 
@@ -141,13 +133,23 @@ public class SimonSays : MonoBehaviour
             yield return new WaitForSeconds(.5f); 
         }
 
-        if (win == true )
+        if (win == true)
         {
             // Win 
-            Panel.SetActive(false); 
+            Panel.SetActive(false);
+        }
+        else if (strikes == 3)
+        {
+            // 3 strikes, close panel
+            Panel.SetActive(false);
+        }
+        else
+        {
+            // Less than 3 strikes, continue
+            StartCoroutine(DisplaySequence());
         }
     }
-
-
-
 }
+
+
+
