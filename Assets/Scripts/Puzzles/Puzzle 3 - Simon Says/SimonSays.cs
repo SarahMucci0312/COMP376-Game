@@ -87,6 +87,7 @@ public class SimonSays : MonoBehaviour
             correct = false;
             incorrectSound.Play();
             StartCoroutine(ColorBlink(red));
+            
             ChanceLights[strikes].GetComponent<Image>().color = red;
             
             // Reset values
@@ -129,7 +130,14 @@ public class SimonSays : MonoBehaviour
     // All buttons blink if getting sequence wrong or complete puzzle
     IEnumerator ColorBlink(Color color)
     {
-        yield return new WaitForSeconds(.25f); 
+        // Disable button clicks while blinking
+        for (int k = 0; k < Buttons.Length; k++)
+        {
+            Buttons[k].GetComponent<Button>().enabled = false;
+        }
+
+        yield return new WaitForSeconds(.25f);
+        
         // Blink 3 times
         for (int j = 0; j < 3; j++)
         {
@@ -146,16 +154,29 @@ public class SimonSays : MonoBehaviour
             for (int i = 0; i < LevelLights.Length; i++)
                 LevelLights[i].GetComponent<Image>().color = white;
 
-            yield return new WaitForSeconds(.5f); 
-        }
-
-        if (win == true )
+            yield return new WaitForSeconds(.5f);
+        if (win == true)
         {
             // Win 
-            Panel.SetActive(false); 
+            Panel.SetActive(false);
+            StateNameConptroller.isPaused = false;
+        }
+        else if (strikes == 3)
+        {
+            // 3 strikes, close panel
+            Panel.SetActive(false);
+            StateNameConptroller.isPaused = false;
+        }
+        else
+        {
+            // Less than 3 strikes, continue
+            StartCoroutine(DisplaySequence());
+        }
+
+        // Re-enable buttons
+        for (int k = 0; k < Buttons.Length; k++)
+        {
+            Buttons[k].GetComponent<Button>().enabled = true;
         }
     }
-
-
-
 }
