@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -659,7 +659,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 45.1, y: -12.5}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 200, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &223835120
 MonoBehaviour:
@@ -681,7 +681,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Move: WASD or Arrow Keys\nInteract (for buttons): E \nPause: Esc\n"
+  m_text: "Move: WASD or Arrow Keys\nInteract: E \nPause: Esc\nEnter: Next Dialogue\nTab:
+    Open password puzzle"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -1593,7 +1594,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1015901920}
         m_TargetAssemblyTypeName: startButton, Assembly-CSharp
-        m_MethodName: LoadInroScene
+        m_MethodName: LoadIntroScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -19,12 +19,14 @@ public class DisplayPass : MonoBehaviour
     {
         text.text = StateNameConptroller.currentPass;
 
-        if (StateNameConptroller.currentPass.Length == 4)
+        if (StateNameConptroller.currentPass.Length == 4 && !StateNameConptroller.p4Solved)
         {
             if (StateNameConptroller.currentPass == StateNameConptroller.pass)
             {
                 StateNameConptroller.p4Solved = true;
                 StateNameConptroller.p4Correct = true;
+                StateNameConptroller.correctlySolved += 1;
+                StateNameConptroller.solved += 1;
             }
 
             else
@@ -35,6 +37,7 @@ public class DisplayPass : MonoBehaviour
                 if (StateNameConptroller.p4tries >= 3)
                 {
                     StateNameConptroller.p4Solved = true;
+                    StateNameConptroller.solved += 1;
                 }
             }
         }

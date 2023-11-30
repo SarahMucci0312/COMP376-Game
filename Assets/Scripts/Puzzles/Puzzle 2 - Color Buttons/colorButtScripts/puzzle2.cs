@@ -272,7 +272,7 @@ public class puzzle2 : MonoBehaviour
             }
         }
 
-        if(StateNameConptroller.Pressed1==true && StateNameConptroller.Pressed2==true&& StateNameConptroller.Pressed3==true && StateNameConptroller.Pressed4==true && StateNameConptroller.Pressed5==true )
+        if(StateNameConptroller.Pressed1==true && StateNameConptroller.Pressed2==true&& StateNameConptroller.Pressed3==true && StateNameConptroller.Pressed4==true && StateNameConptroller.Pressed5==true && !StateNameConptroller.p2Solved)
         {
             if(StateNameConptroller.button1=="red"&&StateNameConptroller.button2=="blue"&& StateNameConptroller.button3=="green"&& StateNameConptroller.button4=="yellow" && StateNameConptroller.button5=="pink")
             {
@@ -280,6 +280,7 @@ public class puzzle2 : MonoBehaviour
                 StateNameConptroller.p2Solved = true;
                 StateNameConptroller.p2Correct = true;
                 StateNameConptroller.correctlySolved += 1;
+                StateNameConptroller.solved += 1;
                 denied.SetActive(false);
                 granted.SetActive(true);
             }
@@ -318,9 +319,10 @@ public class puzzle2 : MonoBehaviour
             }
         }
 
-        if (StateNameConptroller.p2tries == 3)
+        if (StateNameConptroller.p2tries == 3 && !StateNameConptroller.p2Solved)
         {
             StateNameConptroller.p2Solved = true;
+            StateNameConptroller.solved += 1;
             StateNameConptroller.redPressed = true;
             StateNameConptroller.bluePressed = true;
             StateNameConptroller.yellowPressed = true;

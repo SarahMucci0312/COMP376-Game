@@ -23,6 +23,7 @@ public class Puzzle1 : MonoBehaviour
                 StateNameConptroller.p1Open = false;
                 Cursor.visible = false;
                 StateNameConptroller.correctlySolved += 1;
+                StateNameConptroller.solved += 1;
             }
             else
             {
@@ -36,6 +37,7 @@ public class Puzzle1 : MonoBehaviour
             Cursor.visible = false;
             StateNameConptroller.p1Solved = true;
             StateNameConptroller.p1Open = false;
+            StateNameConptroller.solved += 1;
         }
     }
 }

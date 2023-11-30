@@ -6,16 +6,7 @@ public class EnableBadEnd : MonoBehaviour
 {
     void Update()
     {
-        if ((StateNameConptroller.p1Correct && StateNameConptroller.p2Correct && !StateNameConptroller.p3Correct && !StateNameConptroller.p4Correct) ||
-            (StateNameConptroller.p1Correct && !StateNameConptroller.p2Correct && StateNameConptroller.p3Correct && !StateNameConptroller.p4Correct) ||
-            (!StateNameConptroller.p1Correct && StateNameConptroller.p2Correct && StateNameConptroller.p3Correct && !StateNameConptroller.p4Correct) ||
-            (StateNameConptroller.p1Correct && !StateNameConptroller.p2Correct && !StateNameConptroller.p3Correct && StateNameConptroller.p4Correct) ||
-            (!StateNameConptroller.p1Correct && StateNameConptroller.p2Correct && !StateNameConptroller.p3Correct && StateNameConptroller.p4Correct) ||
-            (!StateNameConptroller.p1Correct && !StateNameConptroller.p2Correct && StateNameConptroller.p3Correct && StateNameConptroller.p4Correct) ||
-            (StateNameConptroller.p1Correct && !StateNameConptroller.p2Correct && !StateNameConptroller.p3Correct && !StateNameConptroller.p4Correct) ||
-            (!StateNameConptroller.p1Correct && StateNameConptroller.p2Correct && !StateNameConptroller.p3Correct && !StateNameConptroller.p4Correct) ||
-            (!StateNameConptroller.p1Correct && !StateNameConptroller.p2Correct && !StateNameConptroller.p3Correct && StateNameConptroller.p4Correct) ||
-            (!StateNameConptroller.p1Correct && !StateNameConptroller.p2Correct && !StateNameConptroller.p3Correct && !StateNameConptroller.p4Correct))
+        if (StateNameConptroller.correctlySolved <= 2)
         {
             for (int i = 0; i < transform.childCount; i++)
             {

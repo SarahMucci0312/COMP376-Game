@@ -161,6 +161,7 @@ public class SimonSays : MonoBehaviour
             StateNameConptroller.p3Solved = true;
             StateNameConptroller.p3Correct = true;
             StateNameConptroller.correctlySolved += 1;
+            StateNameConptroller.solved += 1;
             StateNameConptroller.isPaused = false;
             StateNameConptroller.simonSaysPressed = false;
         }
@@ -169,6 +170,7 @@ public class SimonSays : MonoBehaviour
             // 3 strikes, close panel
             Panel.SetActive(false);
             StateNameConptroller.p3Solved = true;
+            StateNameConptroller.solved += 1;
             StateNameConptroller.isPaused = false;
             StateNameConptroller.simonSaysPressed = false;
         }

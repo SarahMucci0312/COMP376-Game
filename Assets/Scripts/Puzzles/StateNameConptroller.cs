@@ -6,6 +6,7 @@ public class StateNameConptroller : MonoBehaviour
 {
     //Puzzle correct count
     public static int correctlySolved = 0;
+    public static int solved = 0;
 
     //Sarah puzzle
     public static bool p1Solved = false;
