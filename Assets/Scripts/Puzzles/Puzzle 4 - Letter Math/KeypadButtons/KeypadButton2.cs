@@ -15,31 +15,29 @@ public class KeypadButton2 : MonoBehaviour, IInteractable
 
     void Update()
     {
-        if (StateNameConptroller.keypadPuzzleSolved)
+        if (StateNameConptroller.p4Solved && StateNameConptroller.p4Correct)
         {
             buttonRenderer.material.SetColor("_Color", new Color(0f, 1f, 0f));
+        }
+
+        else if (StateNameConptroller.p4Solved && !StateNameConptroller.p4Correct)
+        {
+            buttonRenderer.material.SetColor("_Color", new Color(1f, 0f, 0f));
+
         }
     }
 
 
     public void Interact()
     {
-        if (StateNameConptroller.keypadPuzzleSolved)
-        {
-
-        }
-
-        else if (StateNameConptroller.currentPass == "")
+        if (!StateNameConptroller.p4Solved)
         {
             StateNameConptroller.currentPass = StateNameConptroller.currentPass + 2;
+
         }
 
-        else
-        {
-            StateNameConptroller.currentPass = "";
-        }
 
-        Debug.Log(StateNameConptroller.currentPass);
+
     }
 
 

@@ -8,41 +8,53 @@ public class BunkerStory : MonoBehaviour
     public TMP_Text line;
     public AudioSource sound;
     private int bunkerLineCount = 0;
-
-    private float time = 3;
-    private float textSpeed = 0.08f;
+    private float textSpeed = 0.04f;
 
     //Scripts
-    private string[] bunkerScript = { "Detective Bean: “Anna...!”",
+    private string[] bunkerScript = { "As soon as I enter the bunker, I hear her.",
+                                      "Detective Bean: “Anna...!”",
                                       "Anna: “H-Help…Please…”",
-                                      "Detective Bean: “Don’t worry, I’m gonna get you out of-”",
+                                      "She's restrained at the arms to a table in the center of the room.",
+                                      "But she's alive- Thank god.",
+                                      "Detective Bean: “Don't worry, I'm gonna get you out of-”",
                                       "Mysterious Voice:“Not so fast, detective.”",
-                                      "Detective Bean: “What…?”",
-                                      "Mysterious Voice: “It’d be a shame for this to end so quickly after all the prep-work I had to do.”",
+                                      "Detective Bean: “You-!”",
                                       "This voice-",
-                                      "Mysterious Voice: “Though, if you want to end this scene with a bang, I suppose that’s alright as well.”",
+                                      "Mysterious Voice: “It'd be a shame for this to end so quickly after all the prep-work I had to do.”",
+                                      "Mysterious Voice: “Though, if you want to end this scene with a bang, I suppose that's alright as well.”",
                                       "-it's all too familiar.",
                                       "Detective Bean: “A bang? What do you-”",
-                                      "Mysterious Voice: “But I’m sure you’d rather leave here with her alive, yes?”",
-                                      "Anna: “I don’t wanna die… I don’t wanna die…”",
-                                      "Mysterious Voice: “To save Anna, you must complete all of the games I’ve set up for you in this room.”",
-                                      "Mysterious Voice: “Each game is directly linked to a restraint on one of Anna’s limbs. Successfully complete a game, and the linked limb will pop free.”",
-                                      "Mysterious Voice: “Fail and, well…bang.”",
-                                      "Mysterious Voice: “Don’t worry though, I’ll give you a few chances. It’d be a shame to let all this work go to waste, after all.”",
-                                      "Mysterious Voice: “Once you’ve either freed [Anna] or they’ve succumbed to a more *unfortunate* fate, you’ll need to answer my initial riddle in order to open the door.”",
-                                      "Mysterious Voice: “All the information you need is in this room.”",
+                                      "Mysterious Voice: “But I'm sure you'd rather leave here with her alive, yes?”",
+                                      "Anna: “I don't wanna die… I don't wanna die…”",
+                                      "Anna...",
+                                      "I knew it would happen eventually.",
+                                      "In my profession, you get to know a lot of...unsavory individuals.",
+                                      "It isn't uncommon for them to try gaining leverage in this way.",
+                                      "Detective Bean: “What do you want? Why do this all the way out-”",
+                                      "Mysterious Voice: “With my revenge nearly complete, I thought I'd challenge you to a duel, detective.”",
+                                      "Mysterious Voice: “The rules are simple: If you can figure out my identity, you win.”",
+                                      "Mysterious Voice: “Of course, I'll give you some hints. But you'll have to work for them.”",
+                                      "Mysterious Voice: “Solve the games I've layed out for you in this room and you'll get your answers.”",
+                                      "Mysterious Voice: “And your wife back.”",
+                                      "Mysterious Voice: “The door will unlock automatically after you've attempted every puzzle.”",
+                                      "Mysterious Voice: “If you got the majority of them correct, that is...”",
+                                      "Mysterious Voice: “But I'll only let your wife go free if you ace them all.”",
+                                      "Mysterious Voice: “Fail even one and, well…bang.”",
+                                      "Mysterious Voice: “Don't worry though, I'll give you a few chances for each.”",
+                                      "Mysterious Voice: “It'd be a shame to let all this work go to waste, after all.”",
                                       "Mysterious Voice: “So detective…Who am I?”",
-                                      "Detective Bean: “Don’t worry, I promise I’ll get you out of here alive.”",
-                                      "Detective Bean: “But to do that, I’m going to need your help.”",
-                                      "Anna: “O-Okay.”",
-                                      "Detective Bean: “Good. I’m going to check out these supposed ‘games’ that have been set up. So for now, just sit tight.”",
+                                      "So it was a recording...",
+                                      "Detective Bean: “Don't worry, I promise that even when that door opens, I won't leave you behind.”",
+                                      "Detective Bean: “I'll get you out of here alive.”",
+                                      "Anna: “P-Promise?”",
+                                      "Detective Bean: “Promise.”",
+                                      "Detective Bean: “I’m going to check out these supposed ‘games’ that have been set up. So for now, just sit tight.”",
                                       ""
                                     };
 
     private void Start()
     {
         line.text = string.Empty;
-        StartCoroutine(Timer());
         StartDialogue();
     }
     private void Update()
@@ -75,11 +87,6 @@ public class BunkerStory : MonoBehaviour
             yield return new WaitForSeconds(textSpeed);
         }
     }
-    private IEnumerator Timer()
-    {
-        yield return new WaitForSeconds(time);
-        StopAllCoroutines();
-    }
 
     void ChangeLine()
     {
@@ -87,11 +94,30 @@ public class BunkerStory : MonoBehaviour
         {
             bunkerLineCount++;
             line.text = string.Empty;
+            if(bunkerLineCount == 6 ||
+                bunkerLineCount == 9 ||
+                bunkerLineCount == 10 ||
+                bunkerLineCount == 13 ||
+                bunkerLineCount == 20 ||
+                bunkerLineCount == 21 ||
+                bunkerLineCount == 22 ||
+                bunkerLineCount == 23 ||
+                bunkerLineCount == 24 ||
+                bunkerLineCount == 25 ||
+                bunkerLineCount == 26 ||
+                bunkerLineCount == 27 ||
+                bunkerLineCount == 28 ||
+                bunkerLineCount == 29 ||
+                bunkerLineCount == 30 ||
+                bunkerLineCount == 31){
+                sound.Play();
+            }
+
             StartCoroutine(ShowLine());
         }
         else
         {
-            sound.Play();
+            SceneManager.LoadScene("Main");
             gameObject.SetActive(false);
         }
     }

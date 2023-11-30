@@ -12,6 +12,7 @@ public class StateNameConptroller : MonoBehaviour
     public static bool p1Correct = false;
     public static int p1tries= 0;
     public static bool doOnce = false;
+    public static bool p1Open = false;
 
     //Sophia puzzle
     public static bool p2Solved = false;
@@ -48,8 +49,8 @@ public class StateNameConptroller : MonoBehaviour
     //Fabio puzzle
     public static bool p4Solved = false;
     public static bool p4Correct = false;
-    public static string pass = "2614";
+    public static int p4tries = 0;
+    public static string pass = "2611";
     public static string currentPass = "";
-    public static bool keypadPuzzleSolved = false;
 
 }

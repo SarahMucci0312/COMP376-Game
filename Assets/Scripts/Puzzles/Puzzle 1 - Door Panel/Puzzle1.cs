@@ -11,6 +11,7 @@ public class Puzzle1 : MonoBehaviour
     
     void Update()
     {
+        Cursor.visible = true;
         input = input.ToLower();
         if (Input.GetKeyDown(KeyCode.Return))
         {
@@ -19,6 +20,8 @@ public class Puzzle1 : MonoBehaviour
                 doorSound.Play();
                 StateNameConptroller.p1Solved = true;
                 StateNameConptroller.p1Correct = true;
+                StateNameConptroller.p1Open = false;
+                Cursor.visible = false;
                 StateNameConptroller.correctlySolved += 1;
             }
             else
@@ -30,7 +33,9 @@ public class Puzzle1 : MonoBehaviour
 
         if(StateNameConptroller.p1tries == 3)
         {
+            Cursor.visible = false;
             StateNameConptroller.p1Solved = true;
+            StateNameConptroller.p1Open = false;
         }
     }
 }

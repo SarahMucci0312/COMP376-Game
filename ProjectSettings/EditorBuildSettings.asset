@@ -14,5 +14,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IntroScene.unity
     guid: 81811bfed56126d4db069aa39a3cefb5
+  - enabled: 1
+    path: Assets/Scenes/BunkerScene.unity
+    guid: a14599b0318243b48b9ecd328672ec8a
+  - enabled: 1
+    path: Assets/Scenes/EndScreen.unity
+    guid: 81567cd7d2a70dc47b8affddac2a574b
+  - enabled: 1
+    path: Assets/Scenes/EndingScene.unity
+    guid: 451c8a7a7c5799e479e3f8670e180254
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

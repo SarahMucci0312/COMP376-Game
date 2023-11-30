@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BadEnding : MonoBehaviour
 {
     public TMP_Text line;
-    public AudioSource sound;
     private int lineCount = 0;
-
     private float time = 3;
-    private float textSpeed = 0.08f;
+    private float textSpeed = 0.04f;
 
     //Scripts
-    private string[] badEndingScript = { "End 2" };
+    private string[] badEndingScript = {"In the end, it was no use.",
+                                        "I couldn't save anyone.",
+                                        "I couldn't solve anything.",
+                                        ""
+                                        };
 
     private void Start()
     {
@@ -67,7 +70,7 @@ public class BadEnding : MonoBehaviour
         }
         else
         {
-            sound.Play();
+            SceneManager.LoadScene(4);
             gameObject.SetActive(false);
         }
     }

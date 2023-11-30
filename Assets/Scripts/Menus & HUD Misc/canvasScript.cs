@@ -13,6 +13,7 @@ public class canvasScript : MonoBehaviour
     public int playerHeight = 1;
     void Update()
     {
+        
         // Calculate the canvas position in front of the player
         Vector3 canvasPosition = playerTransform.position + playerTransform.forward * distanceFromPlayer;
         canvasPosition.y += playerHeight;
@@ -20,6 +21,7 @@ public class canvasScript : MonoBehaviour
 
         // Make the canvas face the same direction as the player
         transform.forward = playerTransform.forward;
+        
 
         if (Input.GetKeyDown(KeyCode.Escape) && paused)
         {
@@ -40,14 +42,16 @@ public class canvasScript : MonoBehaviour
 
         if (SimonSaysPanel.activeSelf == true)
         {
-            Cursor.visible = true;
-            paused = true; 
+            //Cursor.visible = true;
+            //paused = true; 
         }
 
         if (SimonSaysPanel.activeSelf == false)
         {
-            Cursor.visible = false;
-            paused = false;
+            //Cursor.visible = false;
+            //paused = false;
         }
+        
     }
+        
 }

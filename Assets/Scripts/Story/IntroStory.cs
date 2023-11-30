@@ -9,7 +9,7 @@ public class IntroStory : MonoBehaviour
     public AudioSource sound;
     private int introLineCount = 0;
     private float time = 3;
-    private float textSpeed = 0.08f;
+    private float textSpeed = 0.04f;
 
     //Script
     private string[] introScript = {"Detective Bean: “This is the place.”",
@@ -85,7 +85,7 @@ public class IntroStory : MonoBehaviour
         else
         {
             sound.Play();
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("BunkerScene");
             gameObject.SetActive(false);
         }
     }

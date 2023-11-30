@@ -31,12 +31,21 @@ public class PlayerCam : MonoBehaviour
         xyRotation.y += MouseInput.x * sensitivity.x;
 
         xyRotation.x = Mathf.Clamp(xyRotation.x, -90f, 90f);
-            if(!CanvasScript.paused)
+           if(CanvasScript.paused || StateNameConptroller.simonSaysPressed)
+            {
+                playerCam.localEulerAngles = new Vector3(0f, 0f, 0f); 
+                StateNameConptroller.isPaused = true;
+
+
+
+                
+            }
+           else
             {
                 transform.eulerAngles = new Vector3(0f, xyRotation.y, 0f);
-                playerCam.localEulerAngles = new Vector3(xyRotation.x, 0f, 0f); 
-        
-            
+                playerCam.localEulerAngles = new Vector3(xyRotation.x, 0f, 0f);
+
+
                 //Debug.Log(paused);
                 xyRotation.x -= MouseInput.y * sensitivity.y;
                 xyRotation.y += MouseInput.x * sensitivity.x;
@@ -44,28 +53,38 @@ public class PlayerCam : MonoBehaviour
                 xyRotation.x = Mathf.Clamp(xyRotation.x, -90f, 90f);
 
                 transform.eulerAngles = new Vector3(0f, xyRotation.y, 0f);
-                playerCam.localEulerAngles = new Vector3(xyRotation.x, 0f, 0f); 
+                playerCam.localEulerAngles = new Vector3(xyRotation.x, 0f, 0f);
 
                 StateNameConptroller.isPaused = false;
-                
+
+        }
+
+
+        if (!StateNameConptroller.p1Open)
+        {
+            if (!StateNameConptroller.isPaused)
+            {
+                crosshair.SetActive(true);
+
+                transform.eulerAngles = new Vector3(0f, xyRotation.y, 0f);
+                playerCam.localEulerAngles = new Vector3(xyRotation.x, 0f, 0f);
+
+
+                //Debug.Log(paused);
+                xyRotation.x -= MouseInput.y * sensitivity.y;
+                xyRotation.y += MouseInput.x * sensitivity.x;
+
+                xyRotation.x = Mathf.Clamp(xyRotation.x, -90f, 90f);
+
+                transform.eulerAngles = new Vector3(0f, xyRotation.y, 0f);
+                playerCam.localEulerAngles = new Vector3(xyRotation.x, 0f, 0f);
             }
             else
             {
-                playerCam.localEulerAngles = new Vector3(0f, 0f, 0f); 
-                StateNameConptroller.isPaused = true;
-
+                crosshair.SetActive(false);
             }
-
-
-        
-        if (StateNameConptroller.isPaused)
-        {
-            crosshair.SetActive(false);
         }
-        else
-        {
-            crosshair.SetActive(true);
-        }
+
 
 
     }
