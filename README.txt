@@ -1,4 +1,4 @@
-# Debunked
+Debunked
 
 //Story
 Following the disappearance of his wife, detective Bean receives a strange message leading him to an
